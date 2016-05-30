@@ -1,0 +1,2 @@
+# JavaScript_Practice
+学习javaScript的一些练习
