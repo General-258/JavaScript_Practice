@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style>
+        #play {
+            width: 300px;
+            height: 150px;
+            border: 0px;
+            overflow: hidden;
+        }
+
+            #play img {
+                width: 300px;
+                height: 150px;
+                border: 0px;
+            }
+
+        ul {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #play ul {
+            width: 300px;
+            height: 150px;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            list-style: none;
+            z-index: -1;
+        }
+
+        #play ol {
+            float: left;
+            position: relative;
+            margin-left: 92px;
+            margin-top: 120px;
+        }
+
+            #play ol li {
+                list-style: none;
+                width: 30px;
+                height: 20px;
+                border: 1px solid #faba8a;
+                background-color: #f8e7e7;
+                float: left;
+                text-align: center;
+                right: 0px;
+                bottom: 0px;
+                cursor: pointer;
+            }
+
+                #play ol li.active {
+                    background-color: #f99;
+                }
+    </style>
+    <script src="move.js"></script>
+    <script>
+        window.onload = function ()
+        {
+           var oDiv=document.getElementById('play');
+            var aBtn=oDiv.getElementsByTagName('ol')[0].getElementsByTagName('li');
+            var oUl=oDiv.getElementsByTagName('ul')[0];
+            for(var i=0;i<aBtn.length;i++)
+            {
+                aBtn[i].onclick=function()
+                {
+                    for(var i=0;i<aBtn.length;i++)
+                    {
+                        aBtn[i].className='';
+                    }
+                    this.className='active';
+
+                }
+            }
+        };
+    </script>
+</head>
+<body>
+    <div class="play" id="play">
+        <ol>
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ol>
+        <ul>
+            <li>
+                <img src="1.jpg" />
+            </li>
+            <li>
+                <img src="2.jpg" />
+            </li>
+            <li>
+                <img src="3.jpg" />
+            </li>
+            <li>
+                <img src="4.jpg" />
+            </li>
+            <li>
+                <img src="5.jpg" />
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
